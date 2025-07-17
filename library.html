@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Library</title>
+  <link rel="icon" type="image/png" href="img/spotify-logo.png">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img id="spotify-logo" src="img/spotify-logo.png" alt="Spotify Logo" class="logo" />
+        <h1>Youtify</h1>
+      </div>
+      <nav>
+        <a href="spotify.html">Home</a>
+        <a href="library.html" class="active">Your Library</a>
+      </nav>
+      <div class="local-songs-widget">
+        <h3>Upload Media</h3>
+        <input type="file" id="file-input" accept="audio/*,video/mp4" multiple style="display: none;" />
+        <button id="upload-btn">Upload Songs/Videos</button>
+        <div id="local-songs-list"></div>
+      </div>
+      
+    </aside>
+
+    <main class="main-content">
+      <div class="library-header">
+        <h1>Your Library</h1>
+        <div class="library-stats">
+          <span id="songs-count">0 items</span>
+        </div>
+      </div>
+
+      <div class="player-section">
+        <div id="current-player" class="current-player"></div>
+        <audio id="local-audio-player" controls style="display: none;"></audio>
+      </div>
+
+      <div id="library-content"></div>
+    </main>
+
+    <footer class="music-player">
+      <div class="now-playing">
+        <div class="song-info">
+          <div class="song-cover"></div>
+          <div class="song-details">
+            <span id="current-song">No song playing</span>
+            <span class="artist-name">Unknown Artist</span>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control-buttons">
+          <button id="shuffle" class="control-btn">🔀</button>
+          <button id="prev" class="control-btn">⏮️</button>
+          <button id="play" class="play-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+          <button id="next" class="control-btn">⏭️</button>
+          <button id="repeat" class="control-btn">🔁</button>
+        </div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time">0:00</span>
+          <input type="range" class="progress-slider" id="progress-slider" min="0" max="100" value="0">
+          <span class="time-display" id="duration-time">0:00</span>
+        </div>
+      </div>
+      <div class="volume-controls">
+        <button class="control-btn">🔊</button>
+        <input type="range" class="volume-slider" min="0" max="100" value="50">
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="library_indexeddb.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+/* ...existing code... */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto;
+    padding-bottom: 90px; /* Ensure this matches or exceeds the footer height */
+    /* ...existing code... */
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px; /* Set your actual footer height */
+    background: #181818;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ...existing code... */
+}
+/* ...existing code... */
